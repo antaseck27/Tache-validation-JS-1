@@ -1,0 +1,206 @@
+<div class="container-fluid">
+  <!-- Header Cards -->
+  <div class="row mb-4 py-4">
+    <div class="col-md-4">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h6 class="card-title text-muted">Juin</h6>
+          <h3 class="prix">225.000 FCFA</h3>
+          <p class="text-muted">Nombre de cotisation: 27</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h6 class="card-title text-muted">Mai</h6>
+          <h3 class="prix">100.000 FCFA</h3>
+          <p class="text-muted">Nombre de cotisation: 23</p>
+        </div>
+      </div>
+    </div>
+     <!-- Carte Caisse -->
+<div class="col-md-4">
+  <div class="card shadow-lg mb-2 p-1">
+    <div class="card-body d-flex align-items-center gap-3">
+      <div class=" icc text-white rounded d-flex align-items-center justify-content-center border border-white" style="width: 50px; height: 50px;">
+          <i class="fa-solid fa-sack-dollar fs-4 me-2"></i>        </div>
+      <div class="flex-grow-1">
+        <h6 class="text-muted mb-1">Caisse</h6>
+        <h5 class="mb-1">3.500.000 FCFA / <small class="text-muted">5.000.000 FCFA</small></h5>
+        <div class="progress">
+          <div class="progress-bar bg-success" style="width: 70%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <!-- Charts and Stats -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header  fw-bold titre">
+          Évolution des cotisations en fonction du temps
+        </div>
+        <div class="card-body">
+          <!-- Chart.js graph -->
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header  fw-bold titre">
+          Statistiques
+        </div>
+        <div class="card-body">
+          <canvas id="pieChart"></canvas>
+          <!-- <div class="mt-3">
+            <span class="badge bg-success">Terminé</span>
+            <span class="badge bg-warning text-dark">En cours</span>
+            <span class="badge bg-danger">Archivé</span>
+            <span class="badge bg-secondary">Bloqué</span>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tables -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card-header fw-bold ms-5">Juin</div>
+
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>Membres</th>
+                <th>Montant</th>
+                <th>Date</th>
+                <th>Statut</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Selena Roy</td>
+                <td>25.000 FCFA</td>
+                <td>01-06-2022</td>
+                <td><span class="badge bg-success">Validé</span></td>
+              </tr>
+              <tr>
+                <td>Emma Watson</td>
+                <td>25.000 FCFA</td>
+                <td>01-06-2022</td>
+                <td><span class="badge bg-warning text-dark">En attente</span></td>
+              </tr>
+              <tr>
+                <td>Jhon Robert</td>
+                <td>25.000 FCFA</td>
+                <td>01-06-2022</td>
+                <td><span class="badge bg-success">Validé</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card-header fw-bold ms-5">Top progression</div>
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <table class="table table-sm">
+            <thead class="">
+              <tr class="">
+                <th>Membres</th>
+                <th>Date début</th>
+                <th>Progression</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Selena Roy</td>
+                <td>01-06-2022</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" style="width: 100%;">100%</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Jhon Robert</td>
+                <td>01-06-2022</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" style="width: 100%;">100%</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Emma Stone</td>
+                <td>01-06-2022</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar bg-warning" style="width: 64%;">64%</div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chart.js (importé une seule fois dans index.html si possible) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Line chart
+  const ctxLine = document.getElementById('lineChart').getContext('2d');
+  new Chart(ctxLine, {
+    type: 'line',
+    data: {
+      labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
+      datasets: [{
+        label: 'Cotisations',
+        data: [0, 40, 38, 42, 50, 48, 65],
+        borderColor: '#198754',
+        backgroundColor: 'rgba(25, 135, 84, 0.2)',
+        fill: true,
+        tension: 0.4
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      }
+    }
+  });
+
+  // Pie chart
+  const ctxPie = document.getElementById('pieChart').getContext('2d');
+  new Chart(ctxPie, {
+    type: 'doughnut',
+    data: {
+      labels: ['Terminé', 'En cours', 'Archivé', 'Bloqué'],
+      datasets: [{
+        data: [49.48, 18, 23.62, 9.04],
+        backgroundColor: ['#198754', '#ffc107', '#dc3545', '#6c757d']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' }
+      }
+    }
+  });
+</script>
