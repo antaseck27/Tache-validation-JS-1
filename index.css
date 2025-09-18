@@ -1,0 +1,72 @@
+body{
+    color: #093545;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.block-gauche{
+     background-color: rgba(3, 33, 51, 0.927);
+     height: 535px;
+     border-radius:0 20% 20% 0;
+     box-shadow: 0 0 9px rgba(127, 126, 126, 0.927);
+}
+.btn{
+  background-color: rgb(0, 224, 149);
+  border: none;
+  box-shadow: 0 5px 10px rgb(104, 104, 104);
+}
+.section-1 .form-control, .section-2 .form-control{
+    background-color: #093545;
+    color: aliceblue;
+    outline: none;
+}
+.section-1 ::placeholder{
+    color: aliceblue;
+    font-size: 14px;
+}
+
+.section-2 .motPasse{
+   width: 60%;
+   margin: auto;
+   border: 1px solid #093545;
+   border-radius: 2%;
+   padding: 4% 8% 5% 4%;
+   box-shadow: 0 1px 11px rgb(103, 103, 103);
+   font-size: 14px;
+   color: #093545;
+}
+
+.section-2 ::placeholder{
+   font-size: 13px;
+   color: aliceblue;
+}
+
+.section-3 input{
+    border: 1px solid
+
+}
+.section-3  .block-gauche{
+     background-color: #093545;
+     height: 700px;
+     border-radius:0 20% 20% 0;
+     box-shadow: 0 0 9px rgba(127, 126, 126, 0.927);
+}
+.section-3 .btn{
+    width: 37%;
+    padding: 8px;
+    box-shadow: 0 5px 10px rgb(104, 104, 104);
+}
+
+.section-2, .section-3{
+    display: none;
+}
+a{
+    text-decoration: none;
+    color: #093545;
+    cursor: pointer;
+}
+.modal{
+    position: absolute;
+    top: 18%;
+    left: 12%;
+}

@@ -1,0 +1,139 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    color:  #093545;
+}
+
+header,.section-1{
+    font-size: 13px;
+    font-weight: 500;
+}
+.section-1 strong{
+    font-weight: 700;
+}
+.section-1 span{
+    font-size: 15px;
+}
+.section-1 button, .section-2 button{
+    background-color: #093545;
+    border: none;
+}
+.parametre-general{
+    background-color: gainsboro;
+}
+
+.photo{
+    border: 3px solid rgb(0, 224, 149);
+    box-shadow: 0 0 8px;
+    object-fit: cover;
+}
+.paraVert{
+   background-color: rgb(0, 224, 149);
+   padding: 5px 0 5px 30px;
+   font-weight: bold;
+   font-size: 13px;
+}
+.section-2{
+    display: none;
+}
+
+/* .section-3{
+    box-shadow: 0 0 9px rgba(127, 126, 126, 0.927);
+    width: 40%;
+    margin: auto;
+    padding: 2%;
+}
+.section-3 p {
+    font-size: 22px;
+    color: rgb(131, 130, 130);
+}
+.section-3 input{
+    background-color: #093545;
+    color: aliceblue;
+    outline: none;
+}
+.section-3 ::placeholder{
+    color: aliceblue;
+    font-size: 14px;
+} */
+
+
+header,.section-utilisateur{
+    font-size: 16px;
+    font-weight: 600;
+}
+.utilisateur{
+     background-color: gainsboro;
+}
+
+
+
+.section-utilisateur ul li a{
+    text-decoration: none;
+    color: #093545;
+}
+.section-utilisateur ul li:hover{
+    background-color: #093545;
+    border-left: 4px solid rgb(0, 224, 149);
+    transition: 0.5s ease-in;
+    width: 100%;
+    padding: 3%;
+}
+.section-utilisateur ul li a:hover{
+    color: aliceblue;
+}
+.section-utilisateur input{
+    border: 1px solid;
+    height: 25px;
+}
+
+.section-utilisateur button{
+   background-color: #093545;
+   color: aliceblue;
+}
+
+
+.archives{
+     background-color: gainsboro;
+}
+.sectionArchives table{
+    width: 50%;
+    margin: auto;   
+}
+
+.bi-backpack4-fill{
+    color:  rgb(0, 224, 149);
+}
+
+.sectionNextPage table{
+    width: 50%;
+    margin: auto;
+   
+}
+.sectionNextPage{
+    display: none;
+}
+
+
+
+.Membre{
+     background-color: gainsboro;
+}
+.sectionMembreBloquer table{
+    width: 50%;
+    margin: auto;   
+}
+
+.bi-slash-circle{
+    color:  red;
+    font-weight: bold;
+}
+
+.sectionNextPage table{
+    width: 50%;
+    margin: auto;
+   
+}
+.sectionNextPage{
+    display: none;
+}
