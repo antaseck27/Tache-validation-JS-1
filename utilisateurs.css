@@ -1,9 +1,10 @@
 /* --- Styles tableaux --- */
-.table-header{
+.table-header {
   background-color: #20DF7F !important;
   color: #093545 !important;
   font-weight: bold;
 }
+
 .table-custom td,
 .table-custom th {
   border: none !important;
@@ -18,26 +19,50 @@
   background-color: #FFFFFF;
 }
 
-/* les diferentes couleurs du figma */
-.couleur{
-    color: #093545;
-    color: #EDEDEE;
-    color: #20DF7F;
-    color: #FF5959;
-    color: #FFFFFF;
-    color: #ECECED;
+/* Couleurs */
+.text-green {
+  color: #093545 !important;
 }
- .cards1{
+
+.text-primary {
+  color: #093545 !important;
+}
+
+.text-success {
+  color: #20DF7F !important;
+}
+
+.text-danger {
+  color: #FF5959 !important;
+}
+
+.bg-success {
   background-color: #20DF7F !important;
 }
-.paragraphe{
-    color: #093545;
+
+/* Boutons */
+.btn-dark {
+  background-color: #093545 !important;
+  border-radius: 10px !important;
 }
 
+.btn-success {
+  background-color: #20DF7F;
+  border: none;
+}
 
-/* Style par défaut */
+/* Cards */
 .cards1, .cards2, .cards3 {
-  transition: all 0.3s ease; /* Pour un effet doux */
+  transition: all 0.3s ease; /* effet doux */
+}
+
+/* Couleur par défaut */
+.cards1 {
+  background-color: #20DF7F !important;
+}
+
+.paragraphe {
+  color: #093545;
 }
 
 /* Style quand la card est active */
@@ -47,44 +72,22 @@
 }
 
 .cards1.active p, .cards2.active p, .cards3.active p {
-  color:#FFFFFF !important;
+  color: #FFFFFF !important;
 }
-.bi-ban{
+
+/* Icones */
+.bi-ban {
   color: #FF5959;
 }
-.header,th {
-  background-color: #20DF7F !important;
-  color:#093545 !important; 
-   box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-}
-.text-green{
-  color:#093545 !important;
-  /* font-weight: bold; */
-}
-.text-primary{
-  color: #093545 !important;
-}
-.text-success{
-  color: #20DF7F !important ;
-}
-.bg-success{
-  background-color: #20DF7F !important;
-}
-/* .bg-secondary{
-   background-color: #20DF7F !important;
 
-} */
- .text-danger{
-  color: #FF5959 !important ;
- }
- .btn-dark{
-  background-color: #093545 !important;
-  border-radius: 10px !important;
- }
- .me-5{
+/* Header tableaux */
+.header, th {
+  background-color: #20DF7F !important;
+  color: #093545 !important;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Marges */
+.me-5 {
   margin-right: 90px !important;
- }
- .btn-success{
-  background-color: #20DF7F;
-  border: none;
- }
+}
