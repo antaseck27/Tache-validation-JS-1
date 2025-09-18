@@ -39,8 +39,21 @@ body {
 }
 #paramAccordion{
     background-color: var(--primary-color);
+    color: #f8f9fa !important;
 
 }
+.accordion-button:not(.collapsed) {
+    background-color: var(--secondary-color)  ;
+    /* background-color: #0dfd1d !important;  */
+    color: white !important;
+  }
+  .accordion-button::after {
+    filter: invert(1); /* icône flèche blanche */
+    font-weight: 900;
+
+  }
+  
+  
 
 .sidebar .logo {
     padding: 1.5rem;
