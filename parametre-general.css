@@ -20,6 +20,7 @@ body{
 }
 .parametre-general{
     background-color: gainsboro;
+  
 }
 
 .photo{
@@ -76,8 +77,8 @@ header,.section-utilisateur{
     background-color: #093545;
     border-left: 4px solid rgb(0, 224, 149);
     transition: 0.5s ease-in;
-    width: 100%;
-    padding: 3%;
+    /* width: 100%; */
+    /* padding: 3%; */
 }
 .section-utilisateur ul li a:hover{
     color: aliceblue;

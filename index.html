@@ -15,27 +15,36 @@
 
 .block-gauche{
      background-color: rgba(3, 33, 51, 0.927);
-     height: 535px;
+     height: 100vh;
      border-radius:0 20% 20% 0;
      box-shadow: 0 0 9px rgba(127, 126, 126, 0.927);
+}
+.tof{
+  margin-top: 200px;
 }
 .btn{
   background-color: rgb(0, 224, 149);
   border: none;
   box-shadow: 0 5px 10px rgb(104, 104, 104);
+  width: 130px !important;
+  padding: 10px;
+
 }
 .section-1 .form-control, .section-2 .form-control{
     background-color: #093545;
     color: aliceblue;
     outline: none;
+    
 }
 .section-1 ::placeholder{
     color: aliceblue;
     font-size: 14px;
 }
-
+.section-1 input{
+  width: 350px !important;
+}
 .section-2 .motPasse{
-   width: 60%;
+   width: 70%;
    margin: auto;
    border: 1px solid #093545;
    border-radius: 2%;
@@ -51,12 +60,12 @@
 }
 
 .section-3 input{
-    border: 1px solid
+    border: 1px solid;
 
 }
 .section-3  .block-gauche{
      background-color: #093545;
-     height: 700px;
+     height: 100vh;
      border-radius:0 20% 20% 0;
      box-shadow: 0 0 9px rgba(127, 126, 126, 0.927);
 }
@@ -85,17 +94,17 @@ a{
 
    <div class=" row text-center">
        <div class="col-lg-4 col-md-3 col-sm-12  block-gauche ">
-         <img src="IMAGES/Group 1597.png" alt="" class="mt-5 pt-5">
+         <img src="IMAGES/Group 1597.png" alt="" class="tof"> 
       </div>
 
-      <div class="col-lg-7 col-md-3 col-sm-12">
+      <div class="col-lg-8 col-md-3 col-sm-12" style="margin-top: 120px;">
         <div class="d-flex flex-column align-items-center gap-4">
-          <h1>Bienvenue sur Bakéli-tontine</h1>
-          <h3>Connectez-vous</h3>
+          <h1 class="fw-bold" style="font-size: 60px;">Bienvenue sur Bakéli-tontine</h1>
+          <h3 class="">Connectez-vous</h3>
           <p>Connectez-vous et gérez vos cotisations</p>
           <input class="form-control w-50" type="text" placeholder="N° Téléphone" id="inputTéléphone" required>
           <input class="form-control w-50" type="text" placeholder="Mot de passe" id="inputMot2passe" required>
-          <p class="w-50 text-end" id="mot2passe"><a href="#">Mot de passe oublié?</a></p>
+          <p class=" w-50 text-end " id="mot2passe"><a href="#">Mot de passe oublié?</a></p>
           <button class="btn btn-success ps-5 pe-5" id="btnConnexion"><a href="index2.html">connexion</a></button>
           <p>Vous n'avez pas de compte, <strong id="inscrivezVous"><a href="#">inscrivez-vous!</a></strong></p>
         </div>
@@ -108,14 +117,14 @@ a{
   <section class="section-2 ">
     <div class="row  d-flex align-items-center">
         <div class="col-lg-4 col-md-3 col-sm-12  block-gauche ">
-          <img src="IMAGES/Group 7.png" alt="" class="p-5 mt-5 ms-5">
+          <img src="IMAGES/Group 7.png" alt="" class="tof">
       </div>
 
-      <div class="col-lg-7 col-md-3 col-sm-12">
+      <div class="col-lg-7 col-md-3 col-sm-12 p-5">
         <div class="motPasse">
           <h3>Mot de passe oublié</h3>
-          <p class="mt-4">Pour réinitialiser votre mot de passe entrez votre e-mail ou votre numéro de téléphone.</p>
-          <div class="mt-5"><input class="form-control " type="text" placeholder="N° téléphone ou E-mail" id="telEmail"></div>
+          <p class="mt-3">Pour réinitialiser votre mot de passe entrez votre e-mail ou votre numéro de téléphone.</p>
+          <div class="mt-3"><input class="form-control " type="text" placeholder="N° téléphone ou E-mail" id="telEmail"></div>
           <div class="text-end mt-4"> <button class="btn btn-success" id="btnEnvoyer">Envoyer</button></div>
         </div>
   
@@ -130,11 +139,11 @@ a{
      
       <div class="row d-flex align-items-center gap-5 ">
           <div class="col-lg-4 col-md-3 col-sm-12  block-gauche ">
-          <img src="IMAGES/Sign up-pana 1.png" alt="" class=" m-5 pt-5">
+          <img src="IMAGES/Sign up-pana 1.png" alt="" class="tof">
         </div>
 
         <div class="col-lg-7 col-md-3 col-sm-12">
-            <h2 class="text-center mb-4">Inscription</h2>
+            <h2 class="text-center fw-bold">Inscription</h2>
             <div class="row d-flex justify-content-center">
                 <div class="col-5 d-flex flex-column  gap-3 ">
                 
@@ -161,7 +170,7 @@ a{
                     <input type="text" class="form-control" id="inputPrenom">
 
                     <label>Profession</label>
-                    <input type="date" class="form-control" id="inputProfession">
+                    <input type="text" class="form-control" id="inputProfession">
 
                     <label>Confirmer votre mot de passe</label>
                     <input type="text" class="form-control" id="inputCmot2passe">
