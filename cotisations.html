@@ -3,162 +3,265 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Bakeli Tontine - Cotisations</title>
+  <title>Cotisations</title>
+  <link rel="stylesheet" href="cotisations.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    .table-cotisation tbody td {
+      color: #093545 !important;
+    }
+    .table-cotisation tbody tr:hover {
+      background-color: #f3f4f6 !important;
+      transition: background-color 0.2s ease-in-out;
+    }
+    .cursor-pointer { cursor: pointer; }
+
+    .custom-card {
+      padding: 1rem !important;
+      font-size: 0.9rem;
+      height: 120px;        
+      width: 280px;
+    }
+    .row { display: flex; justify-content: center; gap: 40px; }
+    .btn {
+      width: 80px; height: 50px;
+      background-color: rgb(241, 236, 236);
+      border: none;
+    }
+    .btn:hover { background-color: #f3f4f6; }
+    .bi { color: #20DF7F; }
+    .modal-header{
+      background-color: #20DF7F !important;
+      color: #093545 !important;
+    }
+    .table2 thead th {
+    background-color:#093545 !important;
+    color:white !important;
+    font-size: 12px;
+    height: 40px;
+    
+    }
+
+    .custom-modal {
+     max-width: 1200px; /* largeur maximale */
+     width: 80%;        /* largeur par défaut */
+     height: 30vh;      /* hauteur du modal, 80% de la hauteur de la fenêtre */
+    }
+
+   .custom-modal .modal-content {
+     height: 100%;      /* pour que le contenu prenne toute la hauteur */
+    }
+    .modal-body {
+      max-height: 70vh;   /* hauteur maximale du corps du modal */
+      overflow-y: auto;   /* ajoute une scrollbar verticale si besoin */
+    }
+
+
+    /* tableau d evolution */
+
+    /* Tableau pour le modal */
+.table-evolution {
+  width: 90%;
+  border-radius: 30px;
+  background-color: white;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.table-evolution thead {
+  background-color: #093545 !important; /* fond sombre */
+  color: white !important;               /* texte blanc */
+  font-size: 15px;
+}
+
+.table-evolution th,
+.table-evolution td {
+  padding: 0.75rem 1rem;
+}
+
+.table-evolution tbody td {
+  color: #093545 !important;
+}
+
+.table-evolution tbody tr:hover {
+  background-color: #f3f4f6 !important;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.table-evolution tbody td.statut {
+  color: #20DF7F !important;
+  font-weight: bold;
+}
+/* Colonne Statut (fond vert + texte blanc) */
+.col-statut {
+  color: #20DF7F !important;
+  /* color: white !important; */
+  /* font-weight: bold; */
+  /* text-align: center; */
+}
+.progress-bar{
+  background-color: #20DF7F !important;
+
+}
+
+
+  </style>
 </head>
-<body class="bg-gray-100 p-6">
+<body class="bg-light p-4">
 
-
-
- <!-- <div id="zoneEvolution" class="mt-4"></div> -->
-
-<!-- Bouton Actions -->
-<div class="flex justify-end mb-4"> 
-  <button id="btnAction" class="bg-gray-300  w-[80px] h-[50px] font-bold py-2 px-4 mt-10 rounded-xl flex items-center justify-center">
-    <i class="bi bi-three-dots text-[#20DF7F] text-6xl text-center "></i>
+  <!-- Bouton pour ouvrir le modal -->
+  <!-- Bouton pour ouvrir le modal -->
+<div class="d-flex justify-content-end mb-3 me-5">
+  <button id="btncotisation" class="btn fw-bold me-5 rounded">
+    <i class="bi bi-three-dots w-25"></i>
   </button>
 </div>
 
-
-
-<!-- Modal pour le tableau evolutionCotisations -->
-<div id="modalEvolution" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
-  <div class="bg-white rounded-lg shadow-lg w-[950px] h-[90vh] overflow-auto p-4 relative">
-    <p class="bg-[#20DF7F] h-[40px] text-[#093545] font-bold rounded-lg py-2 px-4">Cotisations termines</p>
-    <!-- Bouton fermer -->
-    <button id="btnFermerModal" class="absolute top-2 right-2 text-gray-600 hover:text-[#093545] font-bold text-xl">&times;</button>
-    <!-- Tableau -->
-    <div id="zoneEvolution"></div>
+<!-- Modal Bootstrap -->
+<div class="modal fade" id="modalEvolution" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered custom-modal ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cotisations termines</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="zoneEvolutionModal">
+        <!-- Le tableau sera injecté ici -->
+      </div>
+    </div>
   </div>
 </div>
 
 
-  <!-- Conteneur du second tableau (Action) -->
-  <!-- <div id="zoneTableauAction" class="mb-8"></div> -->
-     <!-- tableauCotisation -->
-    <!-- <div id="tableauCotisation"></div> -->
 
-
-    <!-- Cards -->
-  <div class="grid grid-cols-3 mx-auto gap-4 w-[750px] h-[100px] mt-8">
-    <div id="cardActifs" class="bg-white p-4 rounded-lg shadow text-center cursor-pointer  shadow-lg rounded-lg">
-      <p class="font-semibold-200 text-left ">Juin</p>
-      <p class="text-2xl font-bold  text-left text-gray-600 cursor-pointer ">225.000 FCFA</p>
-    </div>
-    <div id="cardBloques" class="bg-white p-4 rounded-lg shadow text-center cursor-pointer shadow-lg rounded-lg">
-      <p class="font-semibold-200 text-left">Mai</p>
-      <p class="text-2xl font-bold text-left text-gray-600 cursor-pointer">100.000 FCFA</p>
-    </div>
-    <div id="cardTotal" class="bg-white p-4 rounded-lg shadow text-center cursor-pointer shadow-lg rounded-lg">
-      <p class="font-semibold-200 text-left">Total Caisse</p>
-      <p class="text-2xl font-bold text-left text-gray-600 cursor-pointer">3.500.000 FCFA</p>
-      <td class="flex items-center gap-2">
-        <!-- Barre de progression -->
-        <div class="w-full bg-gray-200 rounded-full h-2">
-        <div 
-          class="h-2 rounded-full bg-[#20DF7F]" 
-          style="width: 77%;">
+    <div class="container mt-5">
+    <div class="row">
+      <div id="cardActifs" class="col-12 col-md-4 bg-white p-3 rounded shadow text-center cursor-pointer custom-card">
+        <p class="fw-light text-start">Juin</p>
+        <p class="fs-5 fw-bold text-start text-secondary">225.000 FCFA</p>
+      </div>
+      <div id="cardBloques" class="col-12 col-md-4 bg-white p-3 rounded shadow text-center cursor-pointer custom-card">
+        <p class="fw-light text-start">Mai</p>
+        <p class="fs-5 fw-bold text-start text-secondary">100.000 FCFA</p>
+      </div>
+      <div id="cardTotal" class="col-12 col-md-4 bg-white p-3 rounded shadow text-center cursor-pointer custom-card">
+        <p class="fw-light text-start">Total Caisse</p>
+        <p class="fs-5 fw-bold text-start text-secondary">3.500.000 FCFA</p>
+        <div class="d-flex align-items-center gap-2 mt-2">
+          <div class="progress flex-grow-1" style="height:5px;">
+            <div class="progress-bar bg-success" style="width:77%;"></div>
           </div>
+          <span class="small fw-semibold text-dark">77% Au seuil</span>
         </div>
-         <!-- Pourcentage -->
-       <span class="text-xs font-semibold text-black">77% Au seuil</span>
-      </td>
+      </div>
+    </div>
+  </div>
+  <!-- Tableau membres actifs -->
+  <div id="zoneActifs"></div>
 
+  <!-- Modal Bootstrap pour tableau d'évolution -->
+  <div class="modal fade" id="modalEvolution" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#093545; color:white;">
+          <h5 class="modal-title">Évolution des cotisations</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body" id="zoneEvolution">
+          <!-- Le tableau d'évolution sera injecté ici -->
+        </div>
+      </div>
     </div>
   </div>
 
-   <!-- Conteneur où le tableau sera inséré -->
-  <!-- <div id="zoneTableau" class="mt-4"></div> -->
+ 
 
-  <!-- Conteneur pour le tableau evolutionCotisations (sera affiché au clic) -->
-
-<!-- Conteneur où le tableau membresCotises sera inséré -->
-<div id="zoneTableau" class="mt-4"></div>
-
-<script>
-const membresCotises = [
-  { nom: "Colle Fall", date: "01/01/2022", montantCotise: "300.000", montantRestant: "300.000" },
-  { nom: "Anta Seck", date: "01/01/2022", montantCotise: "300.000", montantRestant: "300.000" },
-  { nom: "Idrissa Gnigue", date: "01/01/2022", montantCotise: "300.000", montantRestant: "300.000" },
-  { nom: "Ndeye Gnilane", date: "01/01/2022", montantCotise: "300.000", montantRestant: "300.000" },
-  { nom: "Ahmed Cisse", date: "01/01/2022", montantCotise: "300.000", montantRestant: "300.000" },
-  { nom: "Nogaye Ndao", date: "01/01/2022", montantCotise: "300.000", montantRestant: "300.000" }
+ <script>
+const membresActifs = [
+  { nom: "Colle Fall", dateDeDebut: "01/01/2022", MontantCotise: "200.000 FCFA", MontantRestant: "100.000 FCFA" },
+  { nom: "Anta Seck", dateDeDebut: "01/01/2022", MontantCotise: "200.000 FCFA", MontantRestant: "100.000 FCFA" },
+  { nom: "Idrissa Gnigue", dateDeDebut: "01/01/2022", MontantCotise: "200.000 FCFA", MontantRestant: "100.000 FCFA"},
+  { nom: "Ndeye Gnilane", dateDeDebut: "01/01/2022", MontantCotise: "200.000 FCFA", MontantRestant: "100.000 FCFA"},
+  { nom: "Ahmed Cisse", dateDeDebut: "01/01/2022", MontantCotise: "200.000 FCFA", MontantRestant: "100.000 FCFA" },
+  { nom: "Nogaye Ndao", dateDeDebut: "01/01/2022", MontantCotise: "200.000 FCFA", MontantRestant: "100.000 FCFA" },
 ];
 
-const evolutionCotisations = [
-  { nom: "Colle Fall", dateDebut: "01/01/2022", dateFin: "01/02/2022", montantTotal: "300.000", statut:"Terminé" },
-  { nom: "Anta Seck", dateDebut: "01/01/2022", dateFin: "01/02/2022", montantTotal: "300.000", statut:"Terminé" },
-  { nom: "Idrissa Gnigue", dateDebut: "01/01/2022", dateFin: "01/02/2022", montantTotal: "300.000", statut:"Terminé" },
-  { nom: "Ndeye Gnilane", dateDebut: "01/01/2022", dateFin: "01/02/2022", montantTotal: "300.000", statut:"Terminé" },
-  { nom: "Ahmed Cisse", dateDebut: "01/01/2022", dateFin: "01/02/2022", montantTotal: "300.000", statut:"Terminé" },
-  { nom: "Nogaye Ndao", dateDebut: "01/01/2022", dateFin: "01/02/2022", montantTotal: "300.000", statut:"Terminé" }
+const evolutionCotisation = [
+  { nom: "Colle Fall", dateDeDebut: "01/01/2022", dateDeFin: "01/01/2022", MontantTotalCotise: "300.000 FCFA", statut: "Terminer" },
+  { nom: "Anta Seck", dateDeDebut: "01/01/2022", dateDeFin: "01/01/2022", MontantTotalCotise: "300.000 FCFA", statut: "Terminer" },
+  { nom: "Idrissa Gnigue", dateDeDebut: "01/01/2022", dateDeFin: "01/01/2022", MontantTotalCotise: "300.000 FCFA", statut: "Terminer" },
+  { nom: "Ndeye Gnilane", dateDeDebut: "01/01/2022", dateDeFin: "01/01/2022", MontantTotalCotise: "300.000 FCFA", statut: "Terminer" },
+  { nom: "Ahmed Cisse", dateDeDebut: "01/01/2022", dateDeFin: "01/01/2022", MontantTotalCotise: "300.000 FCFA", statut: "Terminer" },
+  { nom: "Nogaye Ndao", dateDeDebut: "01/01/2022", dateDeFin: "01/01/2022", MontantTotalCotise: "300.000 FCFA", statut: "Terminer" },
 ];
 
-// Affichage du tableau principal
-function afficherMembresCotises() {
-  let html = `<table class="table-auto w-[900px] bg-white mx-auto border-collapse mt-16 shadow-lg rounded-lg">
-    <thead class="bg-[#20DF7F] text-[#093545] font-semibold">
+// Affiche le premier tableau
+function afficherMembresActifs() {
+  let html = `<table class="table table-borderless bg-white shadow rounded-4 mt-5 table-cotisation" style="max-width:900px; margin:auto;">
+    <thead>
       <tr>
-        <th class="px-4 py-2 text-left">Membres</th>
-        <th class="px-4 py-2 text-left">Date début</th>
-        <th class="px-4 py-2 text-left">Montant Cotisé</th>
-        <th class="px-4 py-2 text-left">Montant Restant</th>
-        <th class="px-4 py-2 ">Actions</th>
+        <th>Membres</th>
+        <th>Date début</th>
+        <th>Montant Cotisé</th>
+        <th>Montant Restant</th>
+        <th class="text-center">Actions</th>
       </tr>
-    </thead><tbody>`;
-  membresCotises.forEach(m => {
-    html += `<tr class="hover:bg-gray-100">
-      <td class="px-4 py-2 text-[#093545]">${m.nom}</td>
-      <td class="px-4 py-2 text-[#093545]">${m.date}</td>
-      <td class="px-4 py-2 text-[#093545]">${m.montantCotise} FCFA</td>
-      <td class="px-4 py-2 text-[#093545]">${m.montantRestant} FCFA</td>
-      <td class="px-4 py-2 flex justify-center">
-        <i class="bi bi-eye text-[#093545] cursor-pointer hover:text-[#20DF7F] " title="Voir"></i>
+    </thead>
+    <tbody>`;
+  membresActifs.forEach(m => {
+    html += `<tr>
+      <td>${m.nom}</td>
+      <td>${m.dateDeDebut}</td>
+      <td>${m.MontantCotise}</td>
+      <td>${m.MontantRestant}</td>
+      <td class="text-center"><i class="bi bi-eye text-dark cursor-pointer"></i></td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+  document.getElementById("zoneActifs").innerHTML = html;
+}
+document.addEventListener("DOMContentLoaded", afficherMembresActifs);
+
+// Injecte le tableau d'évolution quand le modal s'ouvre
+function afficherEvolutionCotisations() {
+  let zone = document.getElementById("zoneEvolutionModal"); // ⚠️ ID unique du modal
+  let html = `<table class="table-evolution mx-auto mt-5";">
+    <thead ">
+      <tr>
+        <th>Membres</th>
+        <th>Date Début</th>
+        <th>Date Fin</th>
+        <th>Montant Total Cotisé</th>
+        <th>Statut</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>`;
+  evolutionCotisation.forEach(e => {
+    html += `<tr>
+      <td>${e.nom}</td>
+      <td>${e.dateDeDebut}</td>
+      <td>${e.dateDeFin}</td>
+      <td>${e.MontantTotalCotise}</td>
+      <td class="col-statut">${e.statut}</td>
+      <td class="text-center">
+        <i class="bi bi-eye text-dark me-2" title="Voir"></i>
       </td>
     </tr>`;
   });
   html += `</tbody></table>`;
-  document.getElementById("zoneTableau").innerHTML = html;
+  zone.innerHTML = html;
 }
 
-// Affichage du tableau evolutionCotisations dans le modal
-function afficherEvolutionCotisations() {
-  let html = `<table class="table-auto w-[900px] h-[400px] bg-white border-collapse shadow-lg rounded-lg mt-10">
-    <thead class= "bg-[#093545] text-[#FFFFFF] h-[50px] rounded-lg font-semibold">
-      <tr>
-        <th class="px-4 py-2 text-left">Membres</th>
-        <th class="px-4 py-2 text-left">Date début</th>
-        <th class="px-4 py-2 text-left">Date fin</th>
-        <th class="px-4 py-2 text-left">Montant Total</th>
-        <th class="px-4 py-2 text-left">Statut</th>
-        <th class="px-4 py-2 ">Actions</th>
-      </tr>
-    </thead><tbody>`;
-  evolutionCotisations.forEach(m => {
-    html += `<tr class="hover:bg-gray-100">
-      <td class="px-4 py-2 text-[#093545]">${m.nom}</td>
-      <td class="px-4 py-2 text-[#093545]">${m.dateDebut}</td>
-      <td class="px-4 py-2 text-[#093545]">${m.dateFin}</td>
-      <td class="px-4 py-2 text-green-600 ">${m.montantTotal} FCFA</td>
-      <td class="px-4 py-2 ${m.statut === 'Terminé' ? 'text-green-600 ' : 'text-red-600 '}">${m.statut}</td>
-      <td class="px-4 py-2 flex justify-center">
-        <i class="bi bi-eye text-[#093545] cursor-pointer hover:text-[#20DF7F] text-left"title="Voir"></i>
-      </td>
-      </tr>`;
-  });
-  html += `</tbody></table>`;
-  document.getElementById("zoneEvolution").innerHTML = html;
-}
+// Bouton ouvre le modal
+document.getElementById("btncotisation").addEventListener("click", () => {
+  afficherEvolutionCotisations(); // injecte avant d'ouvrir
+  let modal = new bootstrap.Modal(document.getElementById('modalEvolution'));
+  modal.show();
+});
 
-// Événements
-document.addEventListener("DOMContentLoaded", afficherMembresCotises);
-document.getElementById("btnAction").addEventListener("click", () => {
-  afficherEvolutionCotisations();
-  document.getElementById("modalEvolution").classList.remove("hidden");
-});
-document.getElementById("btnFermerModal").addEventListener("click", () => {
-  document.getElementById("modalEvolution").classList.add("hidden");
-});
 </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+</html>
