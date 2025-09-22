@@ -1,0 +1,18 @@
+h1{
+  color: blue;
+}
+.text1{
+  color: #093545 !important;
+}
+.header2{
+  background-color: blueviolet  !important;
+}
+ .table-cotisation thead th{
+      background-color: #20DF7F !important;
+      color: #093545 !important;
+      height: 50px ;
+      
+    }
+.thead{
+  border-radius: 20px !important;
+}
