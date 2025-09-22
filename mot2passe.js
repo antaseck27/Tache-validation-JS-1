@@ -14,5 +14,6 @@ btnEnvoyer.addEventListener("click", ()=>{
 
 btnOk.addEventListener("click", ()=>{
     section1.style.display="block"
+    section2.style.display="none"
     modale.style.display="none"
 })

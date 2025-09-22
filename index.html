@@ -12,10 +12,15 @@
     font-size: 16px;
     font-weight: 500;
 }
+.section-1 .image{
+   margin-top: 55%;
+}
+
+
 
 .block-gauche{
      background-color: rgba(3, 33, 51, 0.927);
-     height: 535px;
+     height: 700px;
      border-radius:0 20% 20% 0;
      box-shadow: 0 0 9px rgba(127, 126, 126, 0.927);
 }
@@ -49,6 +54,10 @@
    font-size: 13px;
    color: aliceblue;
 }
+.section-2 .image{
+   margin-top: 55%;
+   margin-left: 10%;
+}
 
 .section-3 input{
     border: 1px solid
@@ -65,6 +74,10 @@
     padding: 8px;
     box-shadow: 0 5px 10px rgb(104, 104, 104);
 }
+.section-3 .image{
+    margin-top: 55%;
+   margin-left: 7%;
+}
 
 .section-2, .section-3{
     display: none;
@@ -79,16 +92,22 @@ a{
     top: 18%;
     left: 12%;
 }
+
+@media screen and (max-width: 770px) {
+  .section-1 .block-gauche, .section-2  .block-gauche, .section-3 .block-gauche{
+   display: none;
+}
+}
 </style>
 <body>
   <section class="section-1">
 
    <div class=" row text-center">
-       <div class="col-lg-4 col-md-3 col-sm-12  block-gauche ">
-         <img src="IMAGES/Group 1597.png" alt="" class="mt-5 pt-5">
+       <div class="col-lg-4 col-md-6 col-sm-12  block-gauche ">
+         <img src="IMAGES/Group 1597.png" alt="" class="image">
       </div>
 
-      <div class="col-lg-7 col-md-3 col-sm-12">
+      <div class="col-lg-7 col-md-6 col-sm-12 mt-5">
         <div class="d-flex flex-column align-items-center gap-4">
           <h1>Bienvenue sur Bakéli-tontine</h1>
           <h3>Connectez-vous</h3>
@@ -107,11 +126,11 @@ a{
   <!-- section mot de passe oublié -->
   <section class="section-2 ">
     <div class="row  d-flex align-items-center">
-        <div class="col-lg-4 col-md-3 col-sm-12  block-gauche ">
-          <img src="IMAGES/Group 7.png" alt="" class="p-5 mt-5 ms-5">
+        <div class="col-lg-4 col-md-6 col-sm-12  block-gauche ">
+          <img src="IMAGES/Group 7.png" alt="" class="image">
       </div>
 
-      <div class="col-lg-7 col-md-3 col-sm-12">
+      <div class="col-lg-7 col-md-6 col-sm-12">
         <div class="motPasse">
           <h3>Mot de passe oublié</h3>
           <p class="mt-4">Pour réinitialiser votre mot de passe entrez votre e-mail ou votre numéro de téléphone.</p>
@@ -129,14 +148,14 @@ a{
   <section class="section-3">
      
       <div class="row d-flex align-items-center gap-5 ">
-          <div class="col-lg-4 col-md-3 col-sm-12  block-gauche ">
-          <img src="IMAGES/Sign up-pana 1.png" alt="" class=" m-5 pt-5">
+          <div class="col-lg-4 col-md-5 col-sm-12  block-gauche ">
+          <img src="IMAGES/Sign up-pana 1.png" alt="" class="image">
         </div>
 
-        <div class="col-lg-7 col-md-3 col-sm-12">
+        <div class="col-lg-7 col-md-5 col-sm-12">
             <h2 class="text-center mb-4">Inscription</h2>
             <div class="row d-flex justify-content-center">
-                <div class="col-5 d-flex flex-column  gap-3 ">
+                <div class="col-lg-4 col-md-5 col-sm-12 d-flex flex-column  gap-3 ">
                 
                     <label>Nom</label>
                     <input type="text" class="form-control" id="inputNom">
@@ -155,7 +174,7 @@ a{
                 
                 </div>
 
-                <div class="col-5 d-flex flex-column gap-3 ">
+                <div class="col-lg-4 col-md-5 col-sm-12 d-flex flex-column gap-3 ">
 
                     <label>Prénom</label>
                     <input type="text" class="form-control" id="inputPrenom">

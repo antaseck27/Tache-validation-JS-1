@@ -3,7 +3,8 @@ body{
     padding: 0px;
     color:  #093545;
 }
-
+/*  section 1  et 2*/
+/* parametre general */
 .section-1{
     font-size: 13px;
     font-weight: 500;
@@ -33,30 +34,13 @@ body{
    font-weight: bold;
    font-size: 13px;
 }
+
+/* ................................................................. */
+/* partie utilisateur */
+/* section-utilisateur*/
 .section-2{
     display: none;
 }
-
-/* .section-3{
-    box-shadow: 0 0 9px rgba(127, 126, 126, 0.927);
-    width: 40%;
-    margin: auto;
-    padding: 2%;
-}
-.section-3 p {
-    font-size: 22px;
-    color: rgb(131, 130, 130);
-}
-.section-3 input{
-    background-color: #093545;
-    color: aliceblue;
-    outline: none;
-}
-.section-3 ::placeholder{
-    color: aliceblue;
-    font-size: 14px;
-} */
-
 
 header,.section-utilisateur{
     font-size: 16px;
@@ -65,8 +49,6 @@ header,.section-utilisateur{
 .utilisateur{
      background-color: gainsboro;
 }
-
-
 
 .section-utilisateur ul li a{
     text-decoration: none;
@@ -92,13 +74,16 @@ header,.section-utilisateur{
    color: aliceblue;
 }
 
+/* ................................................................. */
+/* partie Archives */
+/* sectionArchives */
 
-.archives{
-     background-color: gainsboro;
-}
 .sectionArchives table{
     width: 50%;
     margin: auto;   
+}
+.archives{
+     background-color: gainsboro;
 }
 
 .bi-backpack4-fill{
@@ -115,13 +100,15 @@ header,.section-utilisateur{
 }
 
 
-
-.Membre{
-     background-color: gainsboro;
-}
+/* ................................................................. */
+/* partie Membre Bloquer*/
+/* sectionMembreBloquer */
 .sectionMembreBloquer table{
     width: 50%;
     margin: auto;   
+}
+.Membre{
+     background-color: gainsboro;
 }
 
 .bi-slash-circle{
@@ -136,4 +123,66 @@ header,.section-utilisateur{
 }
 .sectionNextPage{
     display: none;
+}
+
+/* partie responsive */
+/* parametre general */
+@media screen and (max-width: 770px) {
+    .photo{
+        border: 3px solid rgb(0, 224, 149);
+        box-shadow: 0 0 8px;
+        object-fit: cover;
+        height: 100px;
+        width: 15%;
+    } 
+}
+@media screen and (max-width: 530px) {
+    .photo{
+        border: 3px solid rgb(0, 224, 149);
+        box-shadow: 0 0 8px;
+        object-fit: cover;
+        height: 50px;
+        width: 15%;
+    } 
+}
+
+/* partie utilisateur */
+@media screen and (max-width: 990px) {
+    .section-utilisateur ul {
+    display: flex;
+    flex-direction: column;
+}
+}
+
+@media screen and (max-width: 630px) {
+    .section-utilisateur ul {
+    display: flex;
+    flex-direction: column;
+}
+}
+
+/* pariie Archive */
+@media screen and (max-width: 630px) {
+    .sectionMembreBloquer table{
+        width: 80%;  
+        margin: auto;
+   }
+}
+@media screen and (max-width: 430px) {
+    .sectionMembreBloquer table{
+        width: 90%;  
+   }
+}
+
+/* pariie Membre bloquer*/
+@media screen and (max-width: 630px) {
+    .sectionArchives table{
+        width: 80%;  
+        margin: auto;
+   }
+}
+@media screen and (max-width: 430px) {
+    .sectionArchives table{
+        width: 90%;  
+   }
 }
