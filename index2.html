@@ -11,17 +11,6 @@
   <!-- f a -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
-   <script>
-    tailwind.config = {
-      corePlugins: {
-        preflight: false
-      }
-    };
-  </script>
-     <!-- Intégration de Tailwind CSS -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
   <link rel="stylesheet" href="dashboard.css">
   
@@ -34,6 +23,9 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <a href="#" class="nav-link text-white fs-6 fw-bold" onclick="loadPage('dashboard.html')"><i class="bi bi-grid fs-4 fw-bold"></i>  Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white fs-6 fw-bold" onclick="loadPage('utilisateurs.html2')"> <i class="bi bi-person fs-5"></i>  Utilisateurs2</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-white fs-6 fw-bold" onclick="loadPage('utilisateurs.html')"> <i class="bi bi-person fs-5"></i>  Utilisateurs</a>
@@ -125,5 +117,6 @@ window.onload = function () {
 
 
   </script>
+  <script src="dashboard.js"></script>
 </body>
 </html>
