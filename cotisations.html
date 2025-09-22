@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cotisations</title>
   <link rel="stylesheet" href="cotisations.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <style>
     .table-cotisation tbody td {
@@ -159,20 +159,6 @@
   <!-- Tableau membres actifs -->
   <div id="zoneActifs"></div>
 
-  <!-- Modal Bootstrap pour tableau d'évolution -->
-  <div class="modal fade" id="modalEvolution" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header" style="background-color:#093545; color:white;">
-          <h5 class="modal-title">Évolution des cotisations</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
-        </div>
-        <div class="modal-body" id="zoneEvolution">
-          <!-- Le tableau d'évolution sera injecté ici -->
-        </div>
-      </div>
-    </div>
-  </div>
 
  
 
@@ -224,9 +210,9 @@ document.addEventListener("DOMContentLoaded", afficherMembresActifs);
 
 // Injecte le tableau d'évolution quand le modal s'ouvre
 function afficherEvolutionCotisations() {
-  let zone = document.getElementById("zoneEvolutionModal"); // ⚠️ ID unique du modal
-  let html = `<table class="table-evolution mx-auto mt-5";">
-    <thead ">
+  let zone = document.getElementById("zoneEvolutionModal");
+  let html = `<table class="table-evolution mx-auto mt-5">
+    <thead>
       <tr>
         <th>Membres</th>
         <th>Date Début</th>
@@ -252,6 +238,7 @@ function afficherEvolutionCotisations() {
   html += `</tbody></table>`;
   zone.innerHTML = html;
 }
+
 
 // Bouton ouvre le modal
 document.getElementById("btncotisation").addEventListener("click", () => {
