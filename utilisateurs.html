@@ -11,23 +11,52 @@
 <body class="bg-light p-4">
 
   <!-- Cards -->
-  <div class="row gap-5 mx-auto mb-5 py-5" style="max-width: 900px;">
-    <div id="cardActifs" class="col cards1 bg-success p-4 rounded shadow text-center text-white cursor-pointer">
+   <div class="row mb-4 py-4">
+  <div class="col-md-4">
+    <div class="card shadow-lg card-click " >
+      <div class="card-body p-4" id="cardActifs">
+        <h6 class="card-title text-muted"></h6>
+        <h3 class="prix">Membres Actifs</h3>
+        <p class="text-muted">94 Membres</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow-lg card-click">
+      <div class="card-body p-4" id="cardBloques">
+        <h6 class="card-title text-muted"></h6>
+        <h3 class="prix">Membres Bloqués</h3>
+        <p class="text-muted">6 Membres</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow-lg card-click">
+      <div class="card-body p-4" id="cardTotal">
+        <h6 class="card-title text-muted"></h6>
+        <h3 class="prix">Total Effectif</h3>
+        <p class="text-muted">100 Membres</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- <div class="row mb-4 py-4" style="">
+    <div id="cardActifs" class="col-md-4 cards1 bg-success p-2  shadow-lg text-center text-white cursor-pointer">
       <p class=" ">Membres Actifs</p>
       <p class="h4 fw-bold">94 Membres</p>
     </div>
-    <div id="cardBloques" class="col cards2 bg-white p-4 rounded shadow text-center cursor-pointer">
+    <div id="cardBloques" class="col-md-4 cards2 bg-white p-4  shadow-lg text-center cursor-pointer">
       <p class=" paragraphe">Membres Bloqués <i class="bi bi-ban"></i></p>
       <p class="h4 fw-bold  paragraphe">6 Membres</p>
     </div>
-    <div id="cardTotal" class="col cards3 bg-white p-4 rounded shadow text-center cursor-pointer">
+    <div id="cardTotal" class="col-md-4 cards3 bg-white p-4  shadow-lg text-center cursor-pointer">
       <p class=" paragraphe">Total Effectif</p>
       <p class="h4 fw-bold  paragraphe">100 Membres</p>
     </div>
-  </div>
+  </div> -->
 
   <!-- Bouton Ajouter -->
-  <div class="d-flex justify-content-end mb-3 me-5">
+  <div class="d-flex justify-content-end mb-3 me-5 py-4">
     <button id="btnAjouter" class="btn btn-dark fw-bold me-5 rounded">
       Ajouter
     </button>

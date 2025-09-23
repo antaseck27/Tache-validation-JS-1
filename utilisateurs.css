@@ -91,3 +91,27 @@
 .me-5 {
   /* margin-right: 90px !important; */
 }
+.card-click {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.card-click:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background-color: #20DF7F;
+}
+.card-click:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.coleur{
+  color: #093545;
+  color: #EDEDEE;
+  color: #20DF7F;
+  color: #FF5959;
+  color: #FFFFFF;
+  color: #ECECED;
+
+}
