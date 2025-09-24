@@ -34,13 +34,14 @@ body{
    font-weight: bold;
    font-size: 13px;
 }
+.section-2{
+    display: none;
+}
 
 /* ................................................................. */
 /* partie utilisateur */
 /* section-utilisateur*/
-.section-2{
-    display: none;
-}
+
 
 header,.section-utilisateur{
     font-size: 16px;

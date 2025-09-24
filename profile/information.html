@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="information.css">
+    <title>profil</title>
+</head>
+<body>
+   
+
+    <!-- section-1 -->
+    <section class="container-fluid section-1">
+       <div class="parametre-general p-5"> <h2>Informations</h2></div>
+
+        <div class="row p-5 gap-5">
+            <div class="col-lg-4 col-md-5 col-sm-12 border-end border-3 d-flex flex-column justify-content-start align-items-center">
+                <p class="h5 mb-4 text-secondary opacity-75">Profil</p>
+                <img src="images/IM1.jpg" alt="" width="35%" height="135px"   class="rounded-circle p-2 photo">
+                <strong class="h3">Faly Seck</strong>
+                <span>Designer</span>
+                <button class="btn btn-success text-white mt-5 w-50" id="editorProfil">Editor profil</button>
+            </div>
+            <div class="col-lg-7 col-md-5 col-sm-12">
+                <p class="paraVert">Information Générales</p>
+                <ul>
+                    <li class="d-flex justify-content-between border-bottom"><p>Prénom</p><p>Faly</p></li>
+                    <li class="d-flex justify-content-between border-bottom"><p>Nom</p><p>Seck</p></li>
+                    <li class="d-flex justify-content-between border-bottom"><p>Statut</p><p>utlisateur</p></li>
+                    <li class="d-flex justify-content-between"><p>E-mail</p><p>faly@gmail.com</p></li>
+                </ul>
+
+                <p class="paraVert">Statistiques</p>
+                <ul>
+                    <li class="d-flex justify-content-between border-bottom"><p>Nombre de membre ajoutés</p><p>7</p></li>
+                    <li class="d-flex justify-content-between border-bottom"><p>Nombre de membre activés</p><p>5</p></li>     
+            </div>
+        </div>
+    </section>
+
+    <!-- section-2 (BOUTON EDITOR PROFILE) -->
+    <section class="section-2">
+        <div class="row p-5 gap-5">
+            <div class="col-lg-4 col-md-5 col-sm-12 border-end border-3 d-flex flex-column justify-content-start align-items-center">
+                <p class="h5 mb-4 text-secondary opacity-75">Profil</p>
+                 <img src="images/IM1.jpg" alt="" width="35%" height="135px"   class="rounded-circle p-2 photo">
+                <strong class="h3"> Faly Seck</strong>
+                <span>Designer</span>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <strong>Information Générales</strong>
+                <div class="row mt-5">
+                    <div class="col">
+                        <label>Prenom</label>
+                        <input type="text" class="form-control h-25 pt-3 pb-3"  aria-label="First name" required>
+                    </div>
+                    <div class="col-5">
+                        <label>Nom</label>
+                        <input type="text" class="form-control h-25 pt-3 pb-3" aria-label="Last name">
+                    </div>
+                    <div>
+                        <label>Téléphone</label>
+                        <input type="text" class="form-control h-25 pt-3 pb-3" aria-label="Last name">
+                    </div>
+
+                    <div>
+                        <label >Email</label>
+                        <input type="text" class="form-control h-25 pt-3 pb-3" aria-label="Last name">
+                    </div>
+
+                    <div>
+                        <label>Profession</label>
+                        <input type="text" class="form-control h-25 pt-3 pb-3" placeholder="Designer" aria-label="Last name" required>
+                    </div>
+                </div>
+                 <div class="text-end"> <button class="btn btn-success text-white w-25">Mettre à jour</button>
+           
+        </div>
+    </section>
+
+    <!-- <section class="section-3">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <img src="image/portrait-9134409_1920.png" alt="photo" width="25%"   class="rounded-circle p-2 photo">
+            <strong class="h3">Ndiaga Sall</strong>
+            <span>Admin</span>
+            <p>Modifier votre mot de passe</p>
+
+            <div class="d-flex flex-column justify-content-center align-items-center gap-4 mt-3">
+                <div>
+                    <input type="text" class="form-control " aria-label="Last name" placeholder="Mot de passe actuel!">
+                </div>
+
+                <div>
+                    <input type="text" class="form-control " aria-label="Last name" placeholder="Nouveau mot de passe">
+                </div>
+
+                <div>
+                    <input type="text" class="form-control" placeholder="Confirmer mot de passe" aria-label="Last name">
+                </div>
+            </div>
+            <div class="text-center mt-4"> <button class="btn btn-success text-white ">valider</button>
+    </section> -->
+    
+
+
+    <script src="information.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</body>
+</html>

@@ -1,0 +1,40 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    color:  #093545;
+}
+/*  section 1  et 2*/
+/* parametre general */
+.section-1{
+    font-size: 13px;
+    font-weight: 500;
+}
+.section-1 strong{
+    font-weight: 700;
+}
+.section-1 span{
+    font-size: 15px;
+}
+.section-1 button, .section-2 button{
+    background-color: #093545;
+    border: none;
+}
+.parametre-general{
+    background-color: gainsboro;
+}
+
+.photo{
+    border: 3px solid rgb(0, 224, 149);
+    box-shadow: 0 0 8px;
+    object-fit: cover;
+}
+.paraVert{
+   background-color: rgb(0, 224, 149);
+   padding: 5px 0 5px 30px;
+   font-weight: bold;
+   font-size: 13px;
+}
+
+.section-2{
+    display: none;
+}
